@@ -1,0 +1,11 @@
+management.endpoint.health.show-details: always
+jdbc:
+  url: jdbc:presto://3.104.121.108:8889/hive/tmp
+  user: hadoop
+#presto.jdbc:
+#  driver: io.prestosql.jdbc.PrestoDriver
+#  username: hadoop
+#  password:
+#  url: jdbc:presto://13.236.137.127:8889/hive/tmp
+
+

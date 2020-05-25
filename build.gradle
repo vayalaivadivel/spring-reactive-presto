@@ -1,0 +1,34 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.0.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'org.sakki.sample'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.3.0.RELEASE'
+	// https://mvnrepository.com/artifact/io.prestosql/presto-jdbc
+	//compile group: 'io.prestosql', name: 'presto-jdbc', version: '333'
+	// https://mvnrepository.com/artifact/com.facebook.presto/presto-jdbc
+	//compile group: 'com.facebook.presto', name: 'presto-jdbc', version: '0.235.1'
+	// https://mvnrepository.com/artifact/com.facebook.presto/presto-jdbc
+	compile group: 'com.facebook.presto', name: 'presto-jdbc', version: '0.235'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'io.projectreactor:reactor-test'
+}
+
+test {
+	useJUnitPlatform()
+}
